@@ -59,9 +59,9 @@
 /* module parameters */
 
 /* set the default GPIO input pin */
-static int gpio_in_pin = 60;
+static int gpio_in_pin = 98;
 /* set the default GPIO output pin */
-static int gpio_out_pin = 48;
+static int gpio_out_pin = 97;
 /* enable debugging messages */
 static int debug;
 /* -1 = auto, 0 = active high, 1 = active low */
@@ -79,7 +79,7 @@ static void send_space(long length);
 static void lirc_bbb_exit(void);
 
 /* int valid_gpio_pins[] = { 0, 1, 4, 8, 7, 9, 10, 11, 14, 15, 17, 18, 21, 22, 23, 24, 25 }; */
-int valid_gpio_pins[] = { 48, 60 };
+int valid_gpio_pins[] = { 98, 97 };
 
 static struct platform_device *lirc_bbb_dev;
 static struct timeval lasttv = { 0, 0 };
@@ -691,12 +691,12 @@ MODULE_LICENSE("GPL");
 module_param(gpio_out_pin, int, S_IRUGO);
 MODULE_PARM_DESC(gpio_out_pin, "GPIO output/transmitter pin number"
 		 " processor. "/*Valid pin numbers are: 0, 1, 4, 8, 7, 9, 10, 11,"*/
-		 /*" 14, 15, 17, 18, 21, 22, 23, 24, 25,*/" default 50 (P9_14)");
+		 /*" 14, 15, 17, 18, 21, 22, 23, 24, 25,*/" default 97 (GPIO3_1)");
 
 module_param(gpio_in_pin, int, S_IRUGO);
 MODULE_PARM_DESC(gpio_in_pin, "GPIO input pin number. You MUST use an interrupt capable pin!"
 		 /*" Valid pin numbers are: 0, 1, 4, 8, 7, 9, 10, 11, 14, 15,"
-		 " 17, 18, 21, 22, 23, 24, 25,*/" default 60 (P9_12)");
+		 " 17, 18, 21, 22, 23, 24, 25,*/" default 98 (GPIO3_2)");
 
 module_param(sense, bool, S_IRUGO);
 MODULE_PARM_DESC(sense, "Override autodetection of IR receiver circuit"
